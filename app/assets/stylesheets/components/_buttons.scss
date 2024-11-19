@@ -1,0 +1,28 @@
+.button-simple {
+  font-family: $body-font;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: $red;
+  min-width: 200px;
+
+  &:hover {
+    border-radius: 0px;
+    transition: .2s;
+  }
+}
+
+.button-important {
+  font-family: $headers-font;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: $red;
+
+  &:hover {
+    border-radius: 0px;
+    transition: .2s;
+  }
+}
