@@ -1,8 +1,63 @@
 <div>
-  <img src="" alt="">
+  <img class="item-img" src="<%= asset_url("mouse.png")%>" alt="sport">
 </div>
-<div>
-  <div class= "title">
 
+<div class ="container">
+  <div class="item">
+    <h1 class= "title"><%= @item.name %></h1>
+    <p><%= @item.description %></p>
+  </div>
+
+  <div class="price-rating">
+    <p class="price"><strong><%= @item.price_per_day %> </strong>day</p>
+    <p class="rating"><strong>4.98*</strong></p>
+  </div>
+
+ <div id="items-carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#items-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#items-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#items-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="<%= asset_url("mouse.png")%>" class="d-block w-100" alt="sport1">
+    </div>
+    <div class="carousel-item">
+      <img src="<%= asset_url("cat.jpg")%>" class="d-block w-100" alt="sport2">
+    </div>
+    <div class="carousel-item">
+      <img src="<%= asset_url("mouse.png")%>" class="d-block w-100" alt="sport3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#items-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#items-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  <div class="more-info">
+    <p>More info here : Nuestro equipo de skaters ha desarrollado este pequeño skateboard para los niños que quieren comenzar a pasearse en skateboard.Esta tabla es una forma lúdica para empezar a desplazarse y a patinar.</p>
+  </div>
+
+  <div class="reviews">
+    <p><strong>Reviews</strong></p>
+    <div>
+      <p>user.first_name</p>
+      <p>user.comment</p>
+      <p>user.score</p>
+    </div>
   </div>
 </div>
+
+<footer data-controller="show">
+    <div class="total-price">
+      <p><strong><%= @item.price_per_day %>€</strong> total </p>
+      <p>Free cancelation</p>
+    </div>
+    <div><button type="button" class="book">Book</button></div>
+</footer>
