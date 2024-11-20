@@ -9,9 +9,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
   get 'items', to: 'items#index', as: :items
 
   get 'search', to: 'items#search', as: :search
 
   get "items/:id", to: "items#show", as: :item
+
+  get "items/:id/bookings", to: "bookings#new", as: :new_booking
 end
