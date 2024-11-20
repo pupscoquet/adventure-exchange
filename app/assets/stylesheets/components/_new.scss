@@ -5,3 +5,21 @@
 .bigger-h2 {
   font-size: 40px;
 }
+
+#add {
+  font-size: 20px;
+  background-color: $red !important;
+  margin-top: 24px;
+}
+
+.scroll {
+  width: 300px;
+}
+
+.space-between-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto;
+}
