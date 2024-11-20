@@ -70,6 +70,9 @@ ul {
   padding: 10px 0px;
   width: 360px;
 
+  a {
+  }
+
   img {
     width: 340px;
     height: 250px;
@@ -87,6 +90,7 @@ ul {
       text-align: right;
       padding-right: 20px;
       padding-top: 10px;
+      color: #000;
     }
   }
 }
@@ -98,6 +102,7 @@ ul {
 
 .left-text {
   text-align: left;
+  color: #000;
 
   p {
     padding-left: 10px;
