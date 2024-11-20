@@ -2,8 +2,8 @@
   <%= link_to search_path do %>
       <i class="bi bi-search search-i"></i>
       <div>
-        <p id="item-name"><strong><%= params[:item_name].capitalize %></strong></p><br>
-        <p id="item-info"><%= params[:item_location].capitalize %> · <%=  params[:item_dates].capitalize %></p>
+        <p id="item-name"><strong><%= params[:item_name]&.capitalize %></strong></p><br>
+        <p id="item-info"><%= params[:item_location]&.capitalize %> · <%=  params[:item_dates]&.capitalize %></p>
       </div>
   <% end %>
 </section>
