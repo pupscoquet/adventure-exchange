@@ -10,4 +10,34 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "pages/show"
+@import "pages/show";
+
+body {
+  background-color: #f2f2f2;
+  text-align: center;
+
+  h1 {
+    font-family: $headers-font;
+    font-size: 40px;
+    font-weight: bold;
+    width: 300px;
+    margin: 350px auto 20px auto;
+    line-height: 35px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+p {
+  margin-bottom: 0;
+}
