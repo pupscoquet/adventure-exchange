@@ -1,16 +1,16 @@
-body {
-  background-color: $lightest-grey;
-}
+
 
 .item-img {
   width: 100vw;
   height: 30vh;
   object-fit: cover;
+  margin-top: -10px;
 }
 
-.container {
+.container-show {
   padding-top:10px;
   margin-bottom: 90px;
+  background-color: $lightest-grey !important;
 }
 
 .item {
