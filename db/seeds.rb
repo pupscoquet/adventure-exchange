@@ -12,21 +12,45 @@
 require 'faker'
 
 Item.destroy_all
-# User.destroy_all
+User.destroy_all
 
 10.times do
   User.create!(first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  email: Faker::Internet.email ,
+  email: Faker::Internet.email(domain: ["sportsgear", "hotmail", "google", "icloud"].sample) + ".com",
   password: Faker::Internet.password,
   is_owner: [true, false].sample)
 end
 
 20.times do
-  Item.create!(name: Faker::Book.author,
-   user: User.all.sample,
-   description: Faker::Lorem.sentence,
-   location:Faker::Locations::Australia.location,
-   category:["winter", "surfing", "raquets", "biking", "diving"].sample,
-   price_per_day: rand(1..50))
+  Item.create!(
+    name: [
+      "Mountain Bike",
+      "Surfboard",
+      "Tennis Racket",
+      "Snowboard",
+      "Scuba Gear",
+      "Kayak",
+      "Stand-up Paddleboard",
+      "Ski Set",
+      "Golf Clubs",
+      "Road Bike",
+      "Climbing Gear",
+      "Yoga Mat",
+      "Hiking Backpack",
+      "Inline Skates",
+      "Camping Tent",
+      "Fishing Rod",
+      "Kitesurfing Kite",
+      "Skateboard",
+      "Helmet",
+      "Running Shoes"
+    ].sample,
+    user: User.all.sample,
+    description: ["Perfect", "Ideal", "Good", "Average", "Mediocre"].sample + " for " + ["outdoor adventures", "beating the waves", "a weekend getaway", "extreme sports enthusiasts", "beginner or pro athletes"].sample + ".",
+    location: Faker::Address.city + ", " + Faker::Address.country,
+    category: ["Winter Sports", "Water Sports", "Racquet Sports", "Cycling", "Outdoor Adventure"].sample,
+    image_url: "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample,
+    price_per_day: rand(5..100)
+  )
 end
