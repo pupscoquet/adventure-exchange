@@ -1,0 +1,73 @@
+//Specific CSS for Sign-up page
+
+
+body {
+background-color:#FF6B4A;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  margin-top: 60px;
+  font-size: 40px;
+}
+
+
+#new_user {
+  width: 100% ;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  input {
+    margin: 0 auto;
+    // text-align: center;
+    background-color: #fff;
+    border-radius: 30px;
+    width: 320px;
+    // margin-top: 20px;
+    padding: 16px 12px;
+    border: 3px solid transparent;
+
+    ::placeholder {
+      font-size: 5%;
+    }
+
+    &:focus-visible {
+      border: 3px solid white;
+      outline: none;
+    }
+  }
+}
+
+
+.actions{
+  font-family: $headers-font;
+  color: #fff;
+  font-size: 16px;
+}
+
+a{
+  font-family: $headers-font;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: $blue;
+
+  &:hover {
+    border-radius: 0px;
+    transition: .2s;
+  }
+}
+
+.form-inputs {
+  &:focus {
+    border: 3px solid $blue;
+    box-shadow: none !important;
+  }
+}

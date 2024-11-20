@@ -16,10 +16,10 @@
 .button-important {
   font-family: $headers-font;
   color: #fff;
-  font-size: 12px;
-  padding: 4px;
-  border-radius: 50%;
-  background-color: $red;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: $blue;
 
   &:hover {
     border-radius: 0px;
