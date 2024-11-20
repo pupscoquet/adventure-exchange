@@ -2,11 +2,13 @@
   width: 100vw;
   height: 30vh;
   object-fit: cover;
+  margin-top: -10px;
 }
 
-.container {
+.container-show {
   padding-top:10px;
   margin-bottom: 90px;
+  background-color: $lightest-grey !important;
 }
 
 .item {
@@ -99,7 +101,7 @@ footer {
   .book{
     background-color: $red;
     border:none;
-    color:white;
+    color:white !important;
     width:100px;
     height: 45px;
     border-radius: 40px;

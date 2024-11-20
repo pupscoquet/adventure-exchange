@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get "users/password/new", to: "user#new_password"
   # Defines the root path route ("/")
   # root "posts#index"
-
   get 'search', to: 'items#search', as: :search
 
   resources :items, only: [:index, :show, :new, :create]
+
+  get "items/:id/bookings", to: "bookings#new", as: :new_booking
 end

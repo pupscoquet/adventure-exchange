@@ -2,7 +2,7 @@
   <img class="item-img" src="<%= asset_url("mouse.png")%>" alt="sport">
 </div>
 
-<div class ="container">
+<div class ="container-show">
   <div class="item">
     <h1 class= "title"><%= @item.name %></h1>
     <p><%= @item.description %></p>
@@ -54,10 +54,11 @@
   </div>
 </div>
 
-<footer data-controller="show">
+<footer >
     <div class="total-price">
       <p><strong><%= @item.price_per_day %>€</strong> total </p>
       <p>Free cancelation</p>
     </div>
-    <div><button type="button" class="book">Book</button></div>
+    <div><button type="button"
+    class="book"><%=link_to "Book", new_booking_path, class:"text-white" %></button></div>
 </footer>
