@@ -1,0 +1,8 @@
+<div class="spacer"></div>
+<h2 class="bigger-h2">List an item</h2>
+<%= form_with do |item| %>
+  <%= item.text_field :name, placeholder: "What is it?", class: "input" %><br>
+  <%= item.text_area :description, placeholder: "Please describe it", class: "input" %><br>
+  <%= item.range_field :price_per_day, in: 5..100, class: "scroll" %><br>
+  <%= item.submit "Add item", class: "button-important", id: "search" %>
+<% end %>
