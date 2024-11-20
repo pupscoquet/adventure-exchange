@@ -1,0 +1,26 @@
+<section class="search-section">
+  <%= link_to search_path do %>
+      <i class="bi bi-search search-i"></i>
+      <div>
+        <p id="item-name"><strong><%= params[:item_name].capitalize %></strong></p><br>
+        <p id="item-info"><%= params[:item_location].capitalize %> · <%=  params[:item_dates].capitalize %></p>
+      </div>
+  <% end %>
+</section>
+
+<section class="items-list">
+  <ul>
+    <% @items.each do |i| %>
+      <li class="items-li">
+        <%= image_tag('cat.jpg', alt: 'cat skipping a rope') %>
+        <div class="flex-items">
+          <div class="left-text">
+            <h4 class="item-name"><%= i.name %></h4>
+            <p><%= i.description %></p>
+          </div>
+          <h5><%= i.price_per_day %>€</h5>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</section>

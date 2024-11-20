@@ -1,0 +1,10 @@
+<h2 id="title-text">Start the<br>adventure...</h2>
+<%= form_tag "/items", method: 'get' do |i| %>
+  <%= text_field_tag :item_name, params[:item_name], placeholder: "I need...", class: "input" %><br>
+
+  <%= text_field_tag :item_location, params[:item_location], placeholder: "Where?", class: "input" %><br>
+
+  <%= text_field_tag :item_dates, params[:item_dates], placeholder: "When?", class: "input" %><br>
+
+  <%= submit_tag "Search", class: "button-important", id: "search" %>
+<% end %>
