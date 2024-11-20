@@ -1,20 +1,36 @@
-// Specific CSS for your home-page
-body {
-  background-color: $blue;
-  text-align: center;
-
-  h1 {
-    font-family: $headers-font;
-    font-size: 40px;
-    font-weight: bold;
-    width: 300px;
-    margin: 350px auto 20px auto;
-    line-height: 35px;
-  }
+.explore {
+  margin: 0 auto;
+  width: 120px !important;
+  min-width: none !important;
+  z-index: 2;
 }
 
-a {
-  text-decoration: none;
+#main-headline {
+  animation-name: main;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+}
+
+#moving-headline {
+  font-size: 160px;
   color: white;
-  margin: 100px 0px 0px 0px;
+  opacity: 0%;
+  line-height: 120px;
+  animation-name: slide-in;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+
+
+// @keyframes slide-in {
+//   from {
+//     translate: 120vw 40vh;
+//     scale: 200% 1;
+//   }
+
+//   to {
+//     translate: 0 0;
+//     scale: 100% 1;
+//   }
+// }

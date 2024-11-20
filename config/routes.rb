@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get "users/sign_up", to: "user#sign_up"
   get "users/sign_in", to: "user#sign_in"
+  get "users/password/new", to: "user#new_password"
   # Defines the root path route ("/")
   # root "posts#index"
+  get 'items', to: 'items#index', as: :items
+
+  get 'search', to: 'items#search', as: :search
+
+  get "items/:id", to: "items#show", as: :item
 end
