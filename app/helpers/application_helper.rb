@@ -4,6 +4,8 @@ module ApplicationHelper
       'bg-red'
     elsif @bg_blue
       'bg-blue'
+    elsif params[:controller].match?(/devise/)
+      'bg-orange'
     end
   end
 end
