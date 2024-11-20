@@ -7,10 +7,12 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+@import "pages/newbooking";
 
 body {
   background-color: #f2f2f2;

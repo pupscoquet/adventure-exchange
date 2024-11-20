@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   get "users/password/new", to: "user#new_password"
   # Defines the root path route ("/")
   # root "posts#index"
+
   get 'items', to: 'items#index', as: :items
 
   get 'search', to: 'items#search', as: :search
 
   get "items/:id", to: "items#show", as: :item
 
+  get "items/:id/bookings", to: "bookings#new", as: :new_booking
   # create new item
   get "new", to: "items#new", as: :new_item
   post "items", to: "items#create", as: :create_item
