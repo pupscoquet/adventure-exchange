@@ -22,8 +22,6 @@ Item.destroy_all
   is_owner: [true, false].sample)
 end
 
-
-
 20.times do
   Item.create!(name: Faker::Book.author,
    user: User.all.sample,

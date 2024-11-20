@@ -17,4 +17,8 @@ class ItemsController < ApplicationController
   def search
     @bg_red = true
   end
+  
+  def show
+    @item = Item.find(params[:id])
+  end
 end

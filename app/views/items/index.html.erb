@@ -10,17 +10,19 @@
 
 <section class="items-list">
   <ul>
-    <% @items.each do |i| %>
-      <li class="items-li">
-        <%= image_tag('cat.jpg', alt: 'cat skipping a rope') %>
-        <div class="flex-items">
-          <div class="left-text">
-            <h4 class="item-name"><%= i.name %></h4>
-            <p><%= i.description %></p>
+    <% @items.each do |item| %>
+      <%= link_to item_path(item) do %>
+        <li class="items-li">
+          <%= image_tag('cat.jpg', alt: 'cat skipping a rope') %>
+          <div class="flex-items">
+            <div class="left-text">
+              <h4 class="item-name"><%= item.name %></h4>
+              <p><%= item.description %></p>
+            </div>
+            <h5><%= item.price_per_day %>€</h5>
           </div>
-          <h5><%= i.price_per_day %>€</h5>
-        </div>
-      </li>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </section>
