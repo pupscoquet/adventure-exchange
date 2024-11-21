@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+   #items
+  get "/my_items", to: "items#my_items", as: :my_items
   # users
   get "users/:id/dashboard", to: "users#dashboard", as: :dashboard
 
@@ -19,6 +21,6 @@ Rails.application.routes.draw do
 
   # items
   get 'search', to: 'items#search', as: :search
-  resources :items, only: [:index, :show, :new, :create]
-
+  resources :items, only: [:index, :show, :new, :destroy, :create]
+  
 end
