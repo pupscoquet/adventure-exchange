@@ -6,6 +6,7 @@
   font-size: 40px;
 }
 
+
 #search {
   background-color: $blue;
   margin-top: 20px;
@@ -21,7 +22,7 @@
   width: 300px;
 }
 
-#price-container {
+.space-between-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
