@@ -1,5 +1,5 @@
 <section class="listed-items">
-<h2>My items</h2>
+<h1 class="header">My items</h1>
 <%# how can I interate over the items and display the items %>
 <%# items.any? if contains item returns true//
 <%#items.each = interating over the array %>
@@ -24,6 +24,16 @@
     <% end %>
   </ul>
   <% else %>
-    <p> No items </p>
+    <p class="border-horizontal"> No items </p>
   <% end %>
 </section>
+
+<section>
+    <%= link_to dashboard_path(current_user) do %>
+      <p class="button-important smaller-p" style="width: 160px; margin: 0 auto;">My bookings</p>
+    <% end %>
+</section>
+
+<%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+  <p class="logout"><strong>Log out</strong></p>
+<% end %>

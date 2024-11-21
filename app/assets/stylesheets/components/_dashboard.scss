@@ -7,3 +7,20 @@
   border-radius: 20px;
   margin-right: 16px;
 }
+
+.logout {
+  margin-top: 20px;
+  color: $red;
+}
+
+.header {
+  margin: 80px auto 24px auto;
+}
+
+.border-horizontal {
+  border-top: 1px solid $blue;
+  border-bottom: 1px solid $blue;
+  padding: 8px 0;
+  width: 240px;
+  margin: 16px auto;
+}
