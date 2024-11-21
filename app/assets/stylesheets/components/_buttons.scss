@@ -4,7 +4,7 @@
   font-size: 14px;
   padding: 10px 30px;
   border-radius: 20px;
-  background-color: $red;
+  background-color: $blue;
 
   &:hover {
     border-radius: 0px;
@@ -13,7 +13,7 @@
 }
 
 .button-important {
-  font-family: $headers-font;
+  font-family: $body-font;
   color: #fff;
   font-size: 24px;
   padding: 8px 30px;

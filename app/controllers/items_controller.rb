@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     if params[:item_name].present?
-      @items = @items.where("name ILIKE ?", "%#{params[:item_name]}%")
+      @items = @items.where("name ILIKE :item_name OR description ILIKE :item_name", item_name: "%#{params[:item_name]}%")
     end
 
     # if params[:item_location] && params[:item_location] != ""

@@ -5,3 +5,26 @@
 .bigger-h2 {
   font-size: 40px;
 }
+
+#search {
+  background-color: $blue;
+  margin-top: 20px;
+}
+
+#add {
+  font-size: 20px;
+  background-color: $red !important;
+  margin-top: 24px;
+}
+
+.scroll {
+  width: 300px;
+}
+
+#price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto;
+}
