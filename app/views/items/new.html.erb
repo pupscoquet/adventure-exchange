@@ -1,9 +1,9 @@
-<div class="spacer"></div>
-<h2 class="bigger-h2">List an item</h2>
+<h1 class="header">List an item</h1>
 <%= form_with model: @item do |f| %>
   <%= f.text_field :name, placeholder: "What is it?", class: "input" %><br>
   <%= f.text_area :description, placeholder: "Please describe it", class: "input" %><br>
   <%= f.text_field :location, placeholder: "Location", class: "input" %><br>
+  <%= f.file_field :photo, name: "Upload picture: No file chosen" %>
   <p style="margin-top: 20px;"><strong>Price per day</strong></p>
   <div class="space-between-container">
     <p>5€</p><p>100€</p>
