@@ -6,6 +6,7 @@
 @import "buttons";
 @import "search";
 @import "new";
+@import "dashboard";
 
 #index-body {
   background-color: #f2f2f2;
@@ -70,9 +71,6 @@ ul {
   margin: 15px auto;
   padding: 10px 0px;
   width: 360px;
-
-  a {
-  }
 
   img {
     width: 340px;
