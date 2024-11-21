@@ -17,10 +17,10 @@
                 <p class="smaller-p" style="margin-top: -4px;"><%= booking.start_date.strftime('%e %B') %> to<br><%= booking.end_date.strftime('%e %B %y') %></p>
               </div>
               <div>
-                <%= link_to  do %>
+                <%= link_to '#' do %>
                   <p class="button-simple smaller-p" style="margin-top: 0px;">Edit</p>
                 <% end %>
-                <%= link_to  do %>
+                <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
                   <p class="button-simple smaller-p" style="margin-top: 4px;">Delete</p>
                 <% end %>
               </div>
