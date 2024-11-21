@@ -3,7 +3,6 @@ import flatpickr from "flatpickr";
 
 // Connects to data-controller="calendar"
 export default class extends Controller {
-  static targets = ["bookingDates"]
   connect(){
     flatpickr(this.element, {
       calendar_enable_time: true,
