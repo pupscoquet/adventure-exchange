@@ -1,0 +1,35 @@
+<div class="space-between-container" style="width: 360px;">
+  <h4 class="align-self-center" style="margin-left: 16px;"><%= @user.first_name + " " + @user.last_name %></h4>
+  <%= link_to new_item_path do %>
+    <div class="button-important smaller-p">Add item</div>
+  <% end %>
+</div>
+
+<section class="items-list">
+  <% if @items.any? %>
+    <ul>
+      <% @bookings.each do |booking| %>
+        <%= link_to item_path(booking.item_id) do %>
+          <li class="items-li">
+            <div class="flex-items">
+              <div class="left-text" style="margin: 8px 0 0 8px;">
+                <h4 class="item-name" style="margin-top: -12px;"><%= booking.item.name %></h4>
+                <p class="smaller-p" style="margin-top: -4px;"><%= booking.start_date.strftime('%e %B') %> to<br><%= booking.end_date.strftime('%e %B %y') %></p>
+              </div>
+              <div>
+                <%= link_to '#' do %>
+                  <p class="button-simple smaller-p" style="margin-top: 0px;">Edit</p>
+                <% end %>
+                <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                  <p class="button-simple smaller-p" style="margin-top: 4px;">Delete</p>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You dont' have any bookings yet.</p>
+  <% end %>
+</section>

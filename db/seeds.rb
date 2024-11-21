@@ -13,7 +13,9 @@ require 'faker'
 
 Item.destroy_all
 User.destroy_all
+Booking.destroy_all
 
+puts 'Creating 10 users...'
 10.times do
   User.create!(first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -22,6 +24,7 @@ User.destroy_all
   is_owner: [true, false].sample)
 end
 
+puts 'Creating 20 items...'
 20.times do
   Item.create!(
     name: [
@@ -54,3 +57,22 @@ end
     price_per_day: rand(5..100)
   )
 end
+
+puts 'Creating 10 bookings...'
+10.times do
+  start_date = Faker::Date.between(from: Date.today, to: 30.days.from_now)
+  end_date = start_date + rand(1..7).days
+  duration = (end_date - start_date).to_i
+  price_per_day = rand(10..50).to_f
+  total_price = (price_per_day * duration).round(2)
+
+  Booking.create!(
+    start_date: start_date,
+    end_date: end_date,
+    price: total_price,
+    user_id: User.all.sample.id,
+    item_id: Item.all.sample.id
+  )
+end
+
+puts 'All seeds created'

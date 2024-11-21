@@ -9,11 +9,18 @@
   </div>
 
   <div class="dates">
-    <p>Choose your dates:</p>
     <div>
-      <p class="calendar"><strong>Calendar</strong></p>
+      <p>Choose your dates:</p>
+      <%=form_with model: Booking.new do |f| %>
+        <%= f.text_field :start_date,
+                    as: :string,
+                    data: {controller: "calendar"},
+                   class:"form-control", placeholder:"Select dates..."%>
+        <p>Total: <strong><%= @item.price_per_day %> *  €</strong></p>
+        <%= f.submit "Confirm my booking", class:"confirm", data: {controller: "price_calculator"}%>
+      <%end%>
     </div>
-    <div class="confirm">Confirm my booking</div>
+
   </div>
   <div class="sign-in">sign-in</div>
 
