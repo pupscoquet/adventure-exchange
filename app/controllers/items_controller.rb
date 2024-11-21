@@ -37,6 +37,17 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def my_items
+    @items = current_user.items
+    #get all the items from the current user
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to my_items_path, status: :see_other
+  end
+
   private
 
   def item_params

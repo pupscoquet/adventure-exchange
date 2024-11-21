@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   # root "posts#index"
   get 'search', to: 'items#search', as: :search
 
-  resources :items, only: [:index, :show, :new, :create]
+  resources :items, only: [:index, :show, :new, :destroy, :create]
 
   get "items/:id/bookings", to: "bookings#new", as: :new_booking
+
+   #items
+  get "/my_items", to: "items#my_items", as: :my_items
+
 end
