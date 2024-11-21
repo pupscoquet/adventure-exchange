@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :show, :new, :create]
 
-  get "items/:id/bookings", to: "bookings#new", as: :new_booking
+  get "items/:id/bookings/new", to: "bookings#new", as: :new_booking
+  post "items/:id/bookings", to: "bookings#create", as: :bookings
 end
