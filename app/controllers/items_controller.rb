@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: :create
+
   def index
     @items = Item.all
     if params[:item_name].present?
-      @items = @items.where("name ILIKE ?", "%#{params[:item_name]}%")
+      @items = @items.where("name ILIKE :item_name OR description ILIKE :item_name", item_name: "%#{params[:item_name]}%")
     end
 
     # if params[:item_location] && params[:item_location] != ""
@@ -29,6 +31,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
+    @item.image_url = "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample
     @item.save
     redirect_to items_path
   end
@@ -36,6 +40,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description)
+    params.require(:item).permit(:name, :description, :location, :price_per_day)
   end
 end

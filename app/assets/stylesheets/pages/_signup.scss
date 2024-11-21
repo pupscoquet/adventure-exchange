@@ -1,6 +1,4 @@
 //Specific CSS for Sign-up page
-
-
 h2.authentication {
   text-align: center;
   color: white;
@@ -8,7 +6,6 @@ h2.authentication {
 }
 
 #new_user {
-
   width: 100% ;
   padding: 12px 20px;
   margin: 10px 0;
@@ -17,20 +14,19 @@ h2.authentication {
 
   input:not([type='checkbox']) {
     margin: 0 auto;
-    // text-align: center;
     background-color: #fff;
     border-radius: 30px;
     width: 320px;
-    // margin-top: 20px;x
     padding: 16px 12px;
     border: 3px solid transparent;
+    box-shadow: none;
 
     ::placeholder {
       font-size: 5%;
     }
 
     &:focus-visible {
-      border: 3px solid white;
+      border: 3px solid $blue;
       outline: none;
     }
   }
@@ -50,6 +46,9 @@ h2.authentication {
   }
 }
 
+label {
+  display: none;
+}
 
 .actions{
   font-family: $headers-font;
