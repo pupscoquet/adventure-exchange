@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # users
-  get "users/:id/dashboard", to: "users#dashboard"
+  get "users/:id/dashboard", to: "users#dashboard", as: :dashboard
 
-
+  # bookings
   get "items/:id/bookings/new", to: "bookings#new", as: :new_booking
   post "items/:id/bookings", to: "bookings#create", as: :bookings
+  resources :bookings, only: [:destroy]
+
   # items
   get 'search', to: 'items#search', as: :search
   resources :items, only: [:index, :show, :new, :create]
