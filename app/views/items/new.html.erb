@@ -3,8 +3,8 @@
 <%= form_with model: @item do |f| %>
   <%= f.text_field :name, placeholder: "What is it?", class: "input" %><br>
   <%= f.text_area :description, placeholder: "Please describe it", class: "input" %><br>
-  <%= f.text_field :location, placeholder: "Where is it?", class: "input" %><br>
-  <p style="margin-top: 20px;"><strong>Price</strong></p>
+  <%= f.text_field :location, placeholder: "Location", class: "input" %><br>
+  <p style="margin-top: 20px;"><strong>Price per day</strong></p>
   <div class="space-between-container">
     <p>5€</p><p>100€</p>
   </div>
