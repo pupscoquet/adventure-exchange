@@ -7,6 +7,11 @@ class ItemsController < ApplicationController
       @items = @items.where("name ILIKE :item_name OR description ILIKE :item_name", item_name: "%#{params[:item_name]}%")
     end
 
+    location = params[:item_location]
+    if params[:item_location].present?
+      @items = @items.near(location, 200)
+    end
+
     # if params[:item_location] && params[:item_location] != ""
     #   @items = @items.where(params[:item_location])
     # end
