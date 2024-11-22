@@ -2,29 +2,33 @@
  <div class="your-booking">
     <h1>Your booking</h1>
   </div>
+  <div class="reservation">
+    <div class="your-item">
+      <p>Item:</p>
+      <h2><%= @item.name %></h2>
+    </div>
 
-  <div class="your-item">
-    <p>Item:</p>
-    <h2><%= @item.name %></h2>
-  </div>
-
-  <div class="dates">
-    <div>
-      <p>Choose your dates:</p>
-      <%=form_with model: Booking.new do |f| %>
-        <div data-controller="price-calculator" data-price-calculator-price-value="<%= @item.price_per_day %>">
-          <%= f.text_field :start_date,
-                      as: :string,
-                      data: {controller: "calendar", action:"input->price-calculator#count", price_calculator_target:"input"},
-                    class:"form-control", placeholder:"Select dates..."%>
-          <p>Total for <span data-price-calculator-target="days">-</span> days: <strong data-price-calculator-target="total" >-</strong> €</p>
-        </div>
-        <%= f.submit "Confirm my booking", class:"confirm", data: {}%>
-      <%end%>
+    <div class="dates">
+      <div>
+        <p>Choose your dates:</p>
+        <%=form_with model: Booking.new do |f| %>
+          <div data-controller="price-calculator" data-price-calculator-price-value="<%= @item.price_per_day %>">
+            <%= f.text_field :start_date,
+                        as: :string,
+                        data: {controller: "calendar", action:"input->price-calculator#count", price_calculator_target:"input"},
+                      class:"form-control", placeholder:"Select dates..."%>
+            <p>Total for <span data-price-calculator-target="days">-</span> days:</p>
+            <p class="total"><strong data-price-calculator-target="total" >-</strong><strong> €</strong></p>
+          </div>
+          <% if current_user %>
+            <%= f.submit "Confirm my booking", class:"confirm"  %>
+          <% else %>
+            <p>Please log in to book!</p>
+          <% end %>
+        <%end%>
+      </div>
     </div>
 
   </div>
-  <div class="sign-in">sign-in</div>
-
-
+  <%= link_to "Sign in", new_user_session_path, class: "button-simple fs-6" %>
 </div>
