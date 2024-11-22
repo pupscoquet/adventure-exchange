@@ -1,10 +1,9 @@
 .container-new-booking {
   height: 100vh;
   background-color: $blue !important;
-  text-align: left;
+  text-align: center;
   margin-top: -15px;
   background-attachment: fixed;
-  padding-left: 20px;
 }
 
 .your-booking {
@@ -14,28 +13,40 @@
   margin-top:40px;
   h1{
     margin: 0;
+    padding: 25px;
   }
+}
+
+.reservation {
+  border: 1px, solid, white;
+  margin-inline:10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(153, 145, 145, 0.492);
 }
 
 .your-item{
   padding: 10px;
   padding-left:15px;
+  margin-top:20px;
   h2{
     font-family: $body-font;
+    font-size: 30px;
   }
 }
 
 .dates{
   padding: 10px;
-  padding-left:15px;
   padding-top:0;
   p {
     margin-bottom: 5px;
   }
   .form-control {
-    width: 210px;
+    width: 250px;
+    height: 40px;
     background-color: white;
     margin-bottom: 10px;
+    display:inline-block;
+    text-align:center
   }
 }
 
@@ -47,23 +58,23 @@
   margin-right: 25px;
 }
 
+.total {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
 .confirm {
   background-color: $red;
   border:none;
   color:white !important;
   width:210px;
-  height: 40px;
+  height: 45px;
   border-radius: 40px;
   font-family:$body-font ;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
 
-  margin-top:10px;
-}
-
-.sign-in {
-  text-align: center;
   margin-top:30px;
-  margin-left:0px;
+  margin-bottom: 20px;
 }
