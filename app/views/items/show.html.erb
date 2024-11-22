@@ -6,13 +6,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<%= asset_url("mouse.png")%>" class="d-block w-100" alt="sport1">
+      <%= cl_image_tag(@item.photo.key)%>
     </div>
     <div class="carousel-item">
-      <img src="<%= asset_url("cat.jpg")%>" class="d-block w-100" alt="sport2">
+      <%= cl_image_tag(@item.photo.key)%>
     </div>
     <div class="carousel-item">
-      <img src="<%= asset_url("mouse.png")%>" class="d-block w-100" alt="sport3">
+      <%= cl_image_tag(@item.photo.key)%>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#items-carousel" data-bs-slide="prev">
@@ -30,6 +30,7 @@
     <h1 class= "title"><%= @item.name %></h1>
     <p class="category"><strong>Category:</strong> <%= @item.category %></p>
     <p style="color: #797979;" class="left-text" style="margin-bottom: 16px;"><%= @item.location %></p>
+    <p><%= @item.description %></p>
   </div>
 
   <div class="price-rating">
