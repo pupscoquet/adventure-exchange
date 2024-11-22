@@ -75,7 +75,6 @@ end
 
 gem "devise"
 gem "faker"
-gem "flatpickr"
 gem "dotenv-rails"
 gem "cloudinary"
 gem "geocoder"
