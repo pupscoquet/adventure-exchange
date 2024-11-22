@@ -103,8 +103,8 @@ puts 'Creating 20 items...'
                   "Perfect for outdoor adventures, this item is designed to provide both comfort and functionality. Whether you're tackling extreme sports or just enjoying a relaxing day outdoors, it's ideal for all levels of experience."
                 end
   item.description = description
-  file = URI.parse("https://loremflickr.com/300/300/#{Item.last.name.gsub(" ", ",")}").open
-  item.last.photo.attach(io: file, filename: "#{Item.last.name.parameterize}.jpg", content_type: "image/jpg")
+  file = URI.parse("https://loremflickr.com/300/300/#{item.name.gsub(" ", ",")}").open
+  item.photo.attach(io: file, filename: "#{item.name.parameterize}.jpg", content_type: "image/jpg")
   item.save
   puts 'item created'
 end

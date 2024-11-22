@@ -6,11 +6,7 @@ export default class extends Controller {
     price: Number
   }
 
-  static targets = ["input", "total", "days"]
-
-  connect() {
-    console.log(this.priceValue)
-  }
+  static targets = ["input", "total", "days", "priceField"]
 
   count(){
     const dates = this.inputTarget.value;
@@ -28,13 +24,12 @@ export default class extends Controller {
     const final_date = Date.parse(mdy_end);
 
     const difference = final_date - start_date
-    console.log(difference)
     const number_of_days = difference/1000/60/60/24 +1
 
-    const total = number_of_days* this.priceValue
-    console.log(total)
+    const total = number_of_days * this.priceValue
+
     this.totalTarget.innerText = total
     this.daysTarget.innerText = number_of_days
-
+    this.priceFieldTarget.value = total
   }
 }
