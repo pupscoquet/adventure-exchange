@@ -21,11 +21,7 @@
             <p>Total for <span data-price-calculator-target="days">-</span> days:</p>
             <p class="total"><strong data-price-calculator-target="total" >- </strong> €</p>
           </div>
-          <% if current_user %>
-            <%= f.submit "Confirm my booking", class:"confirm"  %>
-          <% else %>
-            <p>Please log in to book!</p>
-          <% end %>
+          <%= f.submit "Confirm my booking", class:"confirm"  %>
         <%end%>
       </div>
     </div>
