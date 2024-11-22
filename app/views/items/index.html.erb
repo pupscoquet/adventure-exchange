@@ -13,7 +13,8 @@
     <% @items.each do |item| %>
       <%= link_to item_path(item) do %>
         <li class="items-li">
-          <%= image_tag(item.image_url, alt: 'cat skipping a rope') %>
+          <%#<%= image_tag(item.image_url, alt: 'cat skipping a rope') %>
+          <%= cl_image_tag(item.photo.key, alt: item.description) %>
           <div class="flex-items">
             <div class="left-text">
               <h4 class="item-name"><%= item.name %></h4>

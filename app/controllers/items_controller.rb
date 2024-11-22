@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    @item.image_url = "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample
     @item.save
     redirect_to items_path
   end
