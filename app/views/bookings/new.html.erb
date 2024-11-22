@@ -12,12 +12,12 @@
     <div>
       <p>Choose your dates:</p>
       <%=form_with model: Booking.new do |f| %>
-        <div data-controller="price-calculator">
+        <div data-controller="price-calculator" data-price-calculator-price-value="<%= @item.price_per_day %>">
           <%= f.text_field :start_date,
                       as: :string,
                       data: {controller: "calendar", action:"input->price-calculator#count", price_calculator_target:"input"},
                     class:"form-control", placeholder:"Select dates..."%>
-          <p>Total: <strong><%= @item.price_per_day %> *  €</strong></p>
+          <p>Total for <span data-price-calculator-target="days">-</span> days: <strong data-price-calculator-target="total" >-</strong> €</p>
         </div>
         <%= f.submit "Confirm my booking", class:"confirm", data: {}%>
       <%end%>
