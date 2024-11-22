@@ -18,7 +18,7 @@
           <div class="flex-items">
             <div class="left-text">
               <h4 class="item-name"><%= item.name %></h4>
-              <p><%= item.description %></p>
+              <p><%= item.description.truncate(50) %></p>
               <p style="color: #797979;"><%= item.location %></p>
             </div>
             <h5><%= item.price_per_day %>€</h5>

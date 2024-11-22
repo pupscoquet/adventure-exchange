@@ -54,7 +54,6 @@ puts 'Creating 20 items...'
     user: User.all.sample,
     location: Faker::Address.city + ", " + Faker::Address.country,
     category: ["Winter Sports", "Water Sports", "Racquet Sports", "Cycling", "Outdoor Adventure"].sample,
-    # image_url: "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample,
     price_per_day: rand(5..100)
   )
 
@@ -102,8 +101,52 @@ puts 'Creating 20 items...'
                 else
                   "Perfect for outdoor adventures, this item is designed to provide both comfort and functionality. Whether you're tackling extreme sports or just enjoying a relaxing day outdoors, it's ideal for all levels of experience."
                 end
+
+  image_url = case item.name
+              when "Mountain Bike"
+                "https://cdn.rosebikes.de/cms/cms.64ca512bf2b490.40848535.png?im=Resize=(960)"
+              when "Surfboard"
+                "https://forward-am.com/wp-content/uploads/2021/01/forward-am-surfboard-header.jpeg"
+              when "Tennis Racket"
+                "https://146499398.cdn6.editmysite.com/uploads/1/4/6/4/146499398/s829221650548957097_p109_i15_w1200.jpeg"
+              when "Snowboard"
+                "https://www.skiinluxury.com/blog/wp-content/uploads/2020/03/41273701930_0ae0fb917e_b.jpg"
+              when "Scuba Gear"
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2274H2MDbU4kGEFregSwtpDviC6z3qvHiGXeT93oy7fsZRDTyzJ8TZJhjjDy2LdwEO3Y&usqp=CAU"
+              when "Kayak"
+                "https://media.tacdn.com/media/attractions-splice-spp-674x446/0c/06/30/1f.jpg"
+              when "Stand-up Paddleboard"
+                "https://nwscdn.com/media/catalog/product/cache/h700xw700/t/o/touring_main.jpg"
+              when "Ski Set"
+                "https://tourism.valloire.net/content/uploads/2019/01/ski-932188_1920-1293x970.jpg"
+              when "Golf Clubs"
+                "https://swingloosegolf.com/wp-content/uploads/Golf-Clubs-on-Grass.webp"
+              when "Road Bike"
+                "https://c02.purpledshub.com/uploads/sites/39/2023/05/Trek-Emonda-AL5-02-2406262.jpg"
+              when "Climbing Gear"
+                "https://rockrun.com/cdn/shop/articles/climbing_hardware_1600x.jpg?v=1564740009"
+              when "Yoga Mat"
+                "https://www.marthastewart.com/thmb/TJyyssNA1ipeIXbp8DVDTzrXNZM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-clean-yoga-mat-getty-0623-1fda4b0532ea4f9787d5f248bbedaf8d.jpg"
+              when "Hiking Backpack"
+                "https://www.camelbak.eu/cdn/shop/files/Hike_Pack_566fb803-3da3-4b13-bf95-afaa171192a6.jpg?crop=center&height=1000&v=1691157067&width=1260"
+              when "Inline Skates"
+                "https://s3.us-east-1.amazonaws.com/images.gearjunkie.com/uploads/2023/07/offroad-rollerblades.jpg"
+              when "Camping Tent"
+                "https://m.media-amazon.com/images/I/71Nao63gy7S.jpg"
+              when "Fishing Rod"
+                "https://blackfinrods.com/cdn/shop/products/DSC04351_535x.jpg?v=1660843276"
+              when "Kitesurfing Kite"
+                "https://fasewind.com/wp-content/uploads/2021/04/kitesurf.jpg"
+              when "Skateboard"
+                "https://muralsyourway.vtexassets.com/arquivos/ids/241160/Skateboard-Sunset-Mural-Wallpaper.jpg?v=638164405202200000"
+              when "Helmet"
+                "https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/hfQAAOSwKMViulQB/$_57.JPG?set_id=8800005007"
+              when "Running Shoes"
+                "https://cdn.runrepeat.com/storage/gallery/buying_guide_primary/1508/1508-best-comfortable-running-shoes-16395638-main.jpg"
+              end
+
   item.description = description
-  file = URI.parse("https://loremflickr.com/300/300/#{item.name.gsub(" ", ",")}").open
+  file = URI.parse(image_url).open
   item.photo.attach(io: file, filename: "#{item.name.parameterize}.jpg", content_type: "image/jpg")
   item.save
   puts 'item created'
