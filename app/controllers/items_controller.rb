@@ -32,13 +32,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    @item.image_url = "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample
     @item.save
     redirect_to items_path
   end
 
   def my_items
     @items = current_user.items
+    @user = current_user
     #get all the items from the current user
   end
 
@@ -51,6 +51,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :location, :price_per_day)
+    params.require(:item).permit(:name, :description, :location, :price_per_day, :photo)
   end
 end

@@ -10,10 +10,12 @@
 
 #seeds products names, descriptions, images(url)
 require 'faker'
+require 'open-uri'
 
+Review.destroy_all
+Booking.destroy_all
 Item.destroy_all
 User.destroy_all
-Booking.destroy_all
 
 puts 'Creating 10 users...'
 10.times do
@@ -52,7 +54,7 @@ puts 'Creating 20 items...'
     user: User.all.sample,
     location: Faker::Address.city + ", " + Faker::Address.country,
     category: ["Winter Sports", "Water Sports", "Racquet Sports", "Cycling", "Outdoor Adventure"].sample,
-    image_url: "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample,
+    # image_url: "https://loremflickr.com/300/300/" + ["tennis", "bike", "ball"].sample,
     price_per_day: rand(5..100)
   )
 
@@ -101,8 +103,13 @@ puts 'Creating 20 items...'
                   "Perfect for outdoor adventures, this item is designed to provide both comfort and functionality. Whether you're tackling extreme sports or just enjoying a relaxing day outdoors, it's ideal for all levels of experience."
                 end
   item.description = description
+  file = URI.parse("https://loremflickr.com/300/300/#{Item.last.name.gsub(" ", ",")}").open
+  item.last.photo.attach(io: file, filename: "#{Item.last.name.parameterize}.jpg", content_type: "image/jpg")
   item.save
+  puts 'item created'
 end
+
+
 
 puts 'Creating 10 bookings...'
 10.times do
