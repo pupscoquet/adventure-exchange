@@ -1,11 +1,6 @@
 <h1 class="header">My bookings</h2>
 
-<div class="space-between-container" style="width: 360px;">
-  <h4 class="align-self-center" style="margin-left: 16px;"><%= @user.first_name + " " + @user.last_name %></h4>
-  <%= link_to new_item_path do %>
-    <div class="button-important smaller-p">Add item</div>
-  <% end %>
-</div>
+<h4 class="align-self-center" style="margin-left: 16px;"><%= @user.first_name + " " + @user.last_name %></h4>
 
 <section class="items-list">
   <% if @bookings.any? %>
