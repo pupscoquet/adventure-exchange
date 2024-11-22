@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
 
   def my_items
     @items = current_user.items
+    @user = current_user
     #get all the items from the current user
   end
 
