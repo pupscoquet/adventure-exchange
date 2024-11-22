@@ -3,24 +3,34 @@
 <%# how can I interate over the items and display the items %>
 <%# items.any? if contains item returns true//
 <%#items.each = interating over the array %>
+<div class="space-between-container" style="width: 360px;">
+  <h4 class="align-self-center" style="margin-left: 16px;"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></h4>
+  <%= link_to new_item_path do %>
+    <div class="button-important smaller-p">Add item</div>
+  <% end %>
+</div>
+
 <% if @items.any? %>
   <ul>
     <% @items.each do |item| %>
-      <li class="items-li" style= "width: 90%; padding: 13px; margin-bottom: 18px;">
-        <div class="flex-items">
-          <div class="left-text">
-            <h4 style="margin-left: 8px;"> <%= item.name %></h4>
+      <%= link_to item_path(item) do %>
+        <li class="items-li" style= "width: 90%; padding: 13px; margin-bottom: 18px;">
+          <div class="flex-items">
+            <div class="left-text">
+              <h4 style="margin: 4px 0 4px 8px;"> <%= item.name %></h4>
+              <p><%= item.price_per_day %>€ per day</p>
+            </div>
+            <div>
+              <%= link_to '#' do %>
+                <p class="button-simple smaller-p" style="margin-top: 0px; padding: 8px 14px;">Edit</p>
+              <% end %>
+              <%= link_to item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <p class="button-simple smaller-p" style="margin-top: 4px; padding: 8px 14px;">Delete</p>
+              <% end %>
+            </div>
           </div>
-          <div>
-            <%= link_to '#' do %>
-              <p class="button-simple smaller-p" style="margin-top: 0px; padding: 8px 14px;">Edit</p>
-            <% end %>
-            <%= link_to item_path(item), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <p class="button-simple smaller-p" style="margin-top: 4px; padding: 8px 14px;">Delete</p>
-            <% end %>
-          </div>
-        </div>
-      </li>
+        </li>
+      <% end %>
     <% end %>
   </ul>
   <% else %>
